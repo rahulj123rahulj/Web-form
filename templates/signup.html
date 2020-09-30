@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Project1</title>
+</head>
+<body>
+    <div class="row mt-2">
+        <div class="card" style="margin:auto;width:60rem;">
+            <h1 class="col-md-6" style="margin:auto;text-align:center">  Assignment 1 </h1>
+        </div>
+    </div>
+    <div class="row mt-3">
+        <div class="card" style="margin:auto;width:40rem;">
+            <div class="card-body">
+                <div class="card-title" style="text-align:center;font-size:2rem;color:blueviolet;">SIGN UP</div>
+                <p class="card-text"> 
+                    <form method="POST" action="register">
+                        {% csrf_token %}
+                        <div class="form-group row">
+                            <label  class="col col-md-3 mt-2">Full Name</label>
+                            <input type="text" class="form-control col col-md-3" name="firstName"  placeholder="First Name" required>
+                            <input type="text" class="form-control col col-md-3" name="middleName" placeholder="Middle Name">
+                            <input type="text" class="form-control col col-md-3" name="lastName" placeholder="Last Name" required>
+                          </div>
+                        <div class="form-group row">
+                          <label for="Email" class="col col-md-3 mt-2">Email address</label>
+                          <input type="email" class="form-control col col-md-9" id="Email" name="email" placeholder="Enter your email">
+                        </div>
+                        <div class="form-group row">
+                          <label for="password" class="col col-md-3 mt-2">Password</label>
+                          <input type="password" class="form-control col col-md-9" id="password" name="pass" placeholder="Password" required>
+                        </div>
+                        <div class="form-group row">
+                            <label for="dob" class="col col-md-3 mt-2">D.O.B</label>
+                            <input type="date" class="form-control col col-md-9" id="dob" name="dob" placeholder="Choose D.O.B">
+                          </div>
+                          <div class="form-group row">
+                            <label for="gender" class="col col-md-3 ">Gender</label>
+                            <div id="gender" class="col col-md-9 ">
+                                <label class="ml-4"><input type="radio" name="gender" value="m"> Male</label>
+                                <label class="ml-4"><input type="radio" name="gender" value="f"> Female</label>
+                                <label class="ml-4"><input type="radio" name="gender" value="o"> Other</label>
+                            </div>
+                            
+                        </div>
+                        <div class="form-group form-check">
+                          <input type="checkbox" class="form-check-input mt-2" id="agree">
+                          <label class="form-check-label" for="agree">I agree that the information provided by me is correct.</label>
+                        </div>
+                        <button type="submit" class="btn btn-danger" >Submit</button>
+                    </form>
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

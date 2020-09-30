@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Assignment-2</title>
+</head>
+<body>
+    <div class="row ml-2">
+        Hello there how you all doing
+    </div>
+    <div class="row">
+        <div class="card" style="margin:auto;width:40rem;">
+            <div class="card-body">
+                <div class="card-title" style="text-align:center;font-size:2rem;color:blueviolet;">Contact Us</div>
+                <p class="card-text"> 
+                    <form method="POST" action="messages">
+                        {% csrf_token %}
+                        <div class="form-group row">
+                            <label  class="col col-md-3 mt-2">Email</label>
+                            <input type="email" class="form-control col col-md-3" name="email"  placeholder="Enter your Email" required>
+                          </div>
+                        <div class="form-group row">
+                          <label for="name" class="col col-md-3 mt-2">Name</label>
+                          <input type="text" class="form-control col col-md-9" id="name" name="name" placeholder="Enter your Name">
+                        </div>
+                        <div class="form-group row">
+                          <label for="subject" class="col col-md-3 mt-2">Subject</label>
+                          <textarea class="form-control col col-md-9" id="subject" rows="2" cols="50" name="subject" maxlength="100"></textarea>
+                        </div>
+                        <div class="form-group row">
+                            <label for="message" class="col col-md-3 mt-2">Message</label>
+                            <textarea class="form-control col col-md-9" id="message" name="message" cols="50" rows="4" placeholder="Type your message here..." maxlength="200" required></textarea>
+                          </div>
+                          <div class="form-group row">
+                            <label for="gender" class="col col-md-3 ">Query</label>
+                            <textarea class="form-control col col-md-9" rows="4" cols="50" maxlength="200" name="query"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-danger" >Submit</button>
+                    </form>
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="row mt-5">
+        <div style="margin:auto;" class="col-md-6">
+           <a class="btn btn-primary" style="margin:auto;display:block" href="show">Show all messages</a>
+       </div>
+    </div>
+</body>
+</html>
